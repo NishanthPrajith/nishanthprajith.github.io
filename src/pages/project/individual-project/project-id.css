@@ -1,0 +1,208 @@
+.projectIdPage {
+  margin: 0;
+  padding: 0;
+  padding: 0;
+}
+
+.titleContainer {
+  padding: 0 14%;
+  margin-top: 12%;
+  width: 72%;
+  align-items: center;
+}
+
+.titleContainer h1 {
+  font-size: 6.5rem;
+  color: #1c1d20;
+  font-weight: 500;
+}
+
+.lines {
+  background-color: rgba(28, 29, 32, 0.175);
+  width: 100%;
+  height: 1px;
+  border: none;
+}
+
+.titleContainer p {
+  color: #1c1d20;
+  font-size: 1.1rem;
+}
+
+.projectInfo {
+  display: grid;
+  grid-template-columns: repeat(2, 45%);
+  column-gap: 5%;
+  margin-top: 5%;
+}
+
+.portfolioImage {
+  margin-top: 12%;
+}
+
+.info p:nth-child(1) {
+  color: #999d9e;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.info p:nth-child(2) {
+  color: #1c1d20;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.portfolioImage {
+  background-color: lightgreen;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+}
+.portfolioImage img {
+  width: 100%;
+  transform: scale(0.8);
+}
+
+.TwoColumns {
+  display: grid;
+  margin: 0 17%;
+  grid-template-columns: 30% 70%;
+  padding-top: 10vh;
+  padding-bottom: 20vh;
+}
+
+.projectDesc {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  font-weight: 300;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.projectLinks {
+  display: grid;
+  grid-template-columns: repeat(2, 25%);
+}
+
+.projectDesc a {
+  margin-top: 6vh;
+  font-size: 1.15rem;
+  text-decoration: underline;
+  font-weight: 500;
+  text-underline-offset: 10px;
+}
+
+.projectlink {
+  padding-top: 6vh;
+}
+
+.videoTitle {
+  padding: 0 15%;
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 3vh;
+}
+
+.box {
+  width: 100%;
+  padding: 3%;
+}
+
+.videoContainer {
+  margin: 0 8%;
+  width: 84%;
+  background-color: lightblue;
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.descriptiveText {
+  display: none;
+}
+
+.imageContainer {
+  margin: 0 8%;
+  width: 84%;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, 50%);
+}
+
+.nextProject {
+  width: 80%;
+  padding: 0 10%;
+  height: 45vh;
+  display: grid;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 824px) {
+  .TwoColumns {
+    grid-template-columns: 100%;
+  }
+  .title {
+    padding-bottom: 6%;
+  }
+  .projectlink {
+    padding-top: 8vh;
+  }
+  .box {
+    padding: 4.5%;
+  }
+  .title {
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .TwoColumns {
+    margin: 0 12%;
+    padding-bottom: 15vh;
+  }
+
+  .imageContainer {
+    margin: 0 8%;
+    width: 84%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(1, 100%);
+  }
+  .projectDesc {
+    font-size: 1.2rem;
+  }
+  .nextProject {
+    height: 30vh;
+    font-size: 1.4rem;
+  }
+
+  .projectLinks {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  .titleContainer h1 {
+    padding-top: 3%;
+    font-size: 3rem;
+  }
+
+  .titleContainer p {
+    font-size: 1rem;
+  }
+
+  .titleContainer {
+    height: 50vh;
+  }
+
+  .portfolioImage {
+    height: 50vh;
+  }
+}

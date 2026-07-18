@@ -1,0 +1,51 @@
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 2rem;
+  padding: 0;
+  width: 100%;
+  color: white;
+  font-family: 'Brick Variant', 'Brush Script MT', cursive;
+}
+
+.logo span:first-child {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.largeText {
+  font-size: 15rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: 'Brick Variant', 'Brush Script MT', cursive;
+  color: white;
+}
+
+.largeText:first-child {
+  margin-left: -0.45rem;
+}
+
+.largeText:last-child {
+  margin-left: -0.45rem;
+}
+
+.mediumText {
+  font-size: 8rem;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: -3rem;
+  text-transform: uppercase;
+  color: white;
+  font-family: 'Brick Variant', 'Brush Script MT', cursive;
+}
+
+.subText {
+  font-size: 5.75rem;
+  margin-top: -7.5rem;
+  color: white;
+  font-family: 'Brick Variant', 'Brush Script MT', cursive;
+}

@@ -1,0 +1,283 @@
+.headerLanding h1 {
+  font-size: 5.5rem;
+  font-weight: 500;
+  color: #1c1d20;
+}
+
+.headerLanding {
+  height: 95vh;
+  width: 65%;
+  display: grid;
+  padding: 3% 12%;
+  margin-top: 4%;
+  margin-bottom: 2%;
+  align-items: center;
+}
+
+.btn10 {
+  bottom: 0px;
+  position: relative;
+  overflow: hidden !important;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background: transparent !important;
+  border-radius: 100px;
+  border: 1px #999d9e solid;
+  padding: 13% 0;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.btn10:hover {
+  color: white;
+  transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+  background-color: #ee6117;
+}
+
+.btn10::before {
+  content: '';
+  width: 100%;
+  height: 0%;
+  border-radius: 100px;
+  display: block;
+  background: #ee6117;
+  position: absolute;
+  opacity: 1;
+  left: 0;
+  bottom: 0;
+  z-index: -12;
+  -moz-transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.btn10:hover::before,
+.btn1O:hover::before {
+  opacity: 1;
+  border-radius: 50px;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-gap: 2rem;
+}
+
+.filters p {
+  border-radius: 100px;
+  border: 1px #999d9e solid;
+  padding: 13% 0;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.filters p sup {
+  margin-left: 2%;
+  color: #999d9e;
+}
+
+.listofProjects .headers p {
+  color: #999d9e;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.headers {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  position: relative;
+  margin: 0 7%;
+}
+
+.individualProject {
+  margin: 0 7%;
+  display: grid;
+  align-items: center;
+  z-index: 0;
+  position: relative;
+  grid-template-columns: 45% 55%;
+  transition: 0.2s ease-in-out;
+}
+
+.stripe {
+  background-color: rgba(28, 29, 32, 0.175);
+  width: 100%;
+  height: 1px;
+  border: none;
+}
+
+.listofProjects {
+  padding: 0 6%;
+  width: 88%;
+  margin-bottom: 10%;
+}
+
+hr {
+  margin: 4vh 0;
+  width: 0%;
+}
+
+.individualProject h1 {
+  margin: 3% 0;
+  font-size: 2rem;
+}
+
+.individualProject:hover h1,
+.individualProject:hover p {
+  color: #ee6117;
+}
+
+.individualProject:hover {
+  transform: scale(1.02);
+}
+
+.individualProject p {
+  margin-top: 1.5%;
+  color: #6f7071;
+}
+
+.individualProject div:nth-child(2) p {
+  font-size: 2rem;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+.individualProject:hover div:nth-child(2) p {
+  color: #e9eeec;
+}
+
+.individualProject div:nth-child(2) div {
+  background-color: #d37d3a;
+  display: inline-block;
+  border-radius: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-height: 1367px) {
+  .headerLanding {
+    height: 65vh;
+  }
+
+  hr {
+    margin: 3vh 0;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .headerLanding {
+    padding: 0% 12%;
+    height: 90vh;
+  }
+
+  .headerLanding h1 {
+    font-size: 5.2rem;
+  }
+
+  hr {
+    margin: 3vh 0;
+  }
+
+  .headerLanding p {
+    font-size: 1.2rem;
+    width: 80%;
+  }
+
+  .individualProject h1 {
+    font-size: 2rem;
+  }
+
+  .individualProject div:nth-child(2) p {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 824px) {
+  .headerLanding {
+    height: 60vh;
+  }
+
+  .headerLanding h1 {
+    font-size: 4.5rem;
+  }
+
+  .headerLanding p {
+    font-size: 1.1rem;
+  }
+
+  hr {
+    margin: 3vh 0;
+  }
+
+  .headerLanding p {
+    font-size: 1.2rem;
+    width: 80%;
+  }
+
+  .individualProject h1 {
+    font-size: 2rem;
+  }
+
+  .individualProject div:nth-child(2) p {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .headerLanding {
+    height: 60vh;
+    padding: 0% 12%;
+  }
+
+  .heading {
+    display: none;
+  }
+
+  .individualProject {
+    display: block;
+  }
+
+  .stripe {
+    width: 96%;
+    margin: 10% 2%;
+  }
+
+  .headerLanding h1 {
+    font-size: 2.4rem;
+    font-weight: 600;
+  }
+
+  .headerLanding p {
+    padding-left: 0%;
+    padding-top: 7%;
+    font-size: 1rem;
+  }
+
+  hr {
+    margin: 3vh 0;
+  }
+
+  .headerLanding p {
+    font-size: 1.2rem;
+    width: 80%;
+  }
+
+  .individualProject h1 {
+    font-size: 1.7rem;
+    margin-bottom: 4%;
+  }
+
+  .individualProject div:nth-child(2) p {
+    font-size: 1rem;
+  }
+}

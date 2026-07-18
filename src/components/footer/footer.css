@@ -1,0 +1,44 @@
+footer {
+  font-size: 1rem;
+  display: grid;
+  height: 10vh;
+  width: 100%;
+  margin-top: 3vh;
+  grid-template-columns: 60% 40%;
+  align-items: center;
+  position: relative;
+  left: 0;
+  bottom: 0;
+}
+
+footer p:nth-child(1) {
+  width: 90%;
+  margin-left: 10%;
+}
+
+footer p:nth-child(2) {
+  width: 90%;
+  float: right;
+  margin-right: 12%;
+  text-align: right;
+}
+
+footer p i {
+  margin: 0% 3%;
+}
+
+footer p span {
+  margin: 0% 0% 0% 3%;
+}
+
+@media screen and (max-width: 824px) {
+  footer p {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  footer p {
+    width: 90%;
+  }
+}
