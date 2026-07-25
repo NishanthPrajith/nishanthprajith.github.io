@@ -1,15 +1,12 @@
 import { motion, Variants } from 'framer-motion';
 import { Helmet } from 'react-helmet';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import './project.css';
-import { MouseContext } from '../../context/mouse-context';
 import { Link } from 'react-router-dom';
 
 import data from './individual-project/data.json';
 
 export default function Project() {
-  const { cursorChangeHandler } = useContext(MouseContext);
-
   const [selection, setSelection] = useState(0);
 
   const [projectData, setProjectData] = useState(data);
@@ -37,7 +34,6 @@ export default function Project() {
   };
 
   function changeCursor() {
-    cursorChangeHandler('');
     window.scroll(0, 0);
   }
 
@@ -166,8 +162,6 @@ export default function Project() {
                   >
                     <motion.div
                       variants={hoverProjectAnimation}
-                      onMouseEnter={() => cursorChangeHandler('project')}
-                      onMouseLeave={() => cursorChangeHandler('')}
                       initial="initial"
                       whileHover="animate"
                       className="individualProject"

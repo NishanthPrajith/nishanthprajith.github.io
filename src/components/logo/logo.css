@@ -6,7 +6,6 @@
   row-gap: 2rem;
   padding: 0;
   width: 100%;
-  color: white;
   font-family: 'Brick Variant', 'Brush Script MT', cursive;
 }
 
@@ -18,15 +17,14 @@
 }
 
 .largeText {
-  font-size: 15rem;
-  font-weight: 400;
+  font-size: 4.25rem;
   text-transform: uppercase;
+  font-weight: 400;
   font-family: 'Brick Variant', 'Brush Script MT', cursive;
-  color: white;
 }
 
 .largeText:first-child {
-  margin-left: -0.45rem;
+  margin-right: 0.35rem;
 }
 
 .largeText:last-child {
@@ -34,18 +32,17 @@
 }
 
 .mediumText {
-  font-size: 8rem;
-  font-weight: 400;
+  font-size: 3rem;
   font-style: normal;
-  margin-top: -3rem;
+  margin-top: -2.25rem;
   text-transform: uppercase;
-  color: white;
+  font-weight: 400;
   font-family: 'Brick Variant', 'Brush Script MT', cursive;
 }
 
 .subText {
-  font-size: 5.75rem;
-  margin-top: -7.5rem;
-  color: white;
+  font-size: 2.2rem;
+  margin-top: -4rem;
+  font-weight: 500;
   font-family: 'Brick Variant', 'Brush Script MT', cursive;
 }

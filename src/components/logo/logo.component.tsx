@@ -1,8 +1,8 @@
 import './logo.css';
 
-export default function Logo({ className }: { className?: string }) {
+export default function Logo() {
   return (
-    <p className={`logo ${className}`}>
+    <p className="logo">
       <span>
         <span className="largeText">N</span>
         <span className="mediumText">ISHANT</span>

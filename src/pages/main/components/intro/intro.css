@@ -1,0 +1,15 @@
+.intro {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+
+  width: 100%;
+  max-width: 550px;
+
+  .intro-name {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+  }
+}

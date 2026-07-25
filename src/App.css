@@ -1,9 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+  --border-color: #b9b9b9;
+  --subtle-text-color: #b9b9b9;
+  --black-color: #050505;
+  --cream-color: #f5f4ed;
+
+  --border-radius: 1.5rem;
+  --button-border-radius: 0.5rem;
+
+  margin: 0;
+  color: var(--black-color);
+  font-family: 'Inter', sans-serif;
+  font-size: 400;
+}
 
 body {
   overscroll-behavior-y: none;
+  min-height: 100vh;
   background-color: #ffffff;
-  color: #1c1d20;
 }
 
 .App {
@@ -12,38 +25,4 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-body::-webkit-scrollbar {
-  width: 0.5em;
-}
-
-body::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: #666;
-  outline: 1px solid #eee;
-}
-
-.scroll {
-  flex: 1;
-  display: grid;
-  align-items: center;
-}
-
-* {
-  margin: 0;
-  color: #37393a;
-  font-family: 'Poppins', sans-serif;
-  font-size: 400;
-}
-
-.versionNumber {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  padding: 0 2vh 5vh 0%;
-  z-index: 10;
 }
