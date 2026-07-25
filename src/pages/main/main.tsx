@@ -1,9 +1,8 @@
-import './main.css';
+import './main.scss';
 
 import Intro from './components/intro/intro';
 import Achievements from './components/achievements/achievements';
 import Projects from './components/projects/projects';
-import Gallery from './components/gallery/gallery';
 
 export default function MainPage() {
   return (
@@ -13,8 +12,6 @@ export default function MainPage() {
       <Achievements />
 
       <Projects />
-
-      {/* <Gallery /> */}
     </div>
   );
 }

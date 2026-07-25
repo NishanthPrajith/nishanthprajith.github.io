@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom';
-import './projects.css';
+import './projects.scss';
 
 export default function Projects() {
   // Data

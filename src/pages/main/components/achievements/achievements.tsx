@@ -1,4 +1,4 @@
-import './achievements.css';
+import './achievements.scss';
 
 export default function Achievements() {
   return (
