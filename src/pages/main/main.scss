@@ -3,6 +3,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 6rem 0;
-  row-gap: 6rem;
+  margin: 6rem 0 0rem 0;
+  row-gap: 5.5rem;
+
+  .projects-list-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .placeholder-separator {
+    width: 100%;
+    height: 4rem;
+    background-color: var(--cream-color);
+    margin-top: 4rem;
+
+    div {
+      width: 100%;
+      height: 100%;
+      background-color: var(--main-body-color);
+      border-radius: 0 0 var(--large-border-radius) var(--large-border-radius);
+    }
+  }
 }

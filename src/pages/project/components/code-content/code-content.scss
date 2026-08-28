@@ -1,0 +1,11 @@
+.code-content {
+  background: var(--gray-color);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+
+  pre {
+    font-size: 0.9rem;
+    white-space: pre;
+    color: var(--code-text-color);
+  }
+}

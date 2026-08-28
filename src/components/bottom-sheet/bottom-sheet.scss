@@ -1,0 +1,122 @@
+.bottom-sheet-portal {
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+  isolation: isolate;
+}
+
+.bottom-sheet-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(5, 5, 5, 0.52);
+  cursor: pointer;
+  opacity: 0;
+}
+
+.bottom-sheet {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 97dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--main-body-color);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  overflow: hidden;
+  transform: translateY(100%);
+  box-shadow: 0 -24px 80px rgba(0, 0, 0, 0.18);
+}
+
+.bottom-sheet-mobile-handle {
+  appearance: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  cursor: grab;
+  z-index: 2;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 42px;
+    height: 0.27rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--black-color) 18%, transparent);
+    transform: translateX(-50%);
+  }
+}
+
+.bottom-sheet-desktop-handle {
+  appearance: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  cursor: grab;
+  z-index: 2;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 42px;
+    height: 4px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--black-color) 18%, transparent);
+    transform: translateX(-50%);
+  }
+}
+
+.bottom-sheet-scroll {
+  flex: 1;
+  position: relative;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: 72px 24px 40px;
+
+  @media (min-width: 768px) {
+    padding-inline: clamp(24px, 5vw, 80px);
+  }
+}
+
+.bottom-sheet-header {
+  max-width: 525px;
+  margin: 0 auto 2.5rem;
+  margin-bottom: 0;
+}
+
+.bottom-sheet-title {
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.25;
+  font-size: var(--h1-text-size);
+  color: var(--black-color);
+}
+
+.bottom-sheet-subtitle {
+  margin-top: 0.65rem;
+  color: var(--subtle-text-color);
+  font-size: var(--small-text-size);
+  line-height: 1.45;
+}
+
+body.bottom-sheet-open {
+  overflow: hidden;
+}
+
+body.bottom-sheet-open .App {
+  transform-origin: 50% 0;
+  will-change: transform, border-radius;
+}

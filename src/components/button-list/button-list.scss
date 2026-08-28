@@ -1,0 +1,52 @@
+.button-list {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  background-color: var(--gray-color);
+  position: relative;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  user-select: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.button-list-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: color-mix(in srgb, var(--border-color) 30%, transparent);
+  border-radius: calc(var(--border-radius) - 0.5rem);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.button-list-item {
+  position: relative;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0.75rem 1.25rem;
+  z-index: 1;
+  font-family: inherit;
+  font-size: var(--small-text-size);
+  transition: color 0.3s ease;
+  white-space: nowrap;
+
+  &.is-highlighted {
+    color: var(--main-body-color);
+  }
+
+  .button-list-label {
+    position: relative;
+    z-index: 1;
+  }
+}

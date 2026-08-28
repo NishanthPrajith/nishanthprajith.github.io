@@ -1,25 +1,21 @@
+import Button from '../button/button';
+import './footer.scss';
+
 import { Link } from 'react-router-dom';
-import './footer.css';
 
 export default function Footer() {
   return (
     <footer>
-      <div className="socials">
-        <Link to="https://www.linkedin.com/in/nishanth-prajith/">
-          <i className="fa-brands fa-linkedin"></i>
+      <p className="footer-center-email">
+        <Link to="mailto:nishanth.prajith@gmail.com" className="email-pill">
+          nishanth.prajith@gmail.com
         </Link>
-        <Link to="https://github.com/NishanthPrajith">
-          <i className="fa-brands fa-github"></i>
-        </Link>
-        <Link to="https://www.instagram.com/nishanthprajith/">
-          <i className="fa-brands fa-instagram"></i>
-        </Link>
-        <Link to="mailto:nishanthprajith@gmail.com">
-          <i className="fa-solid fa-envelope"></i>
-        </Link>
-      </div>
+      </p>
       <p className="footer-center-copyright">
-        Nishanth Prajith &copy; {new Date().getFullYear()}
+        &copy; {new Date().getFullYear()} Nishanth Prajith •{' '}
+        <Link to="https://www.linkedin.com/in/nishanth-prajith/">LinkedIn</Link>{' '}
+        • <Link to="https://github.com/NishanthPrajith">GitHub</Link> •{' '}
+        <Link to="https://www.instagram.com/nishanthprajith/">Instagram</Link>
       </p>
     </footer>
   );

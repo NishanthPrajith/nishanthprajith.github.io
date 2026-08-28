@@ -1,0 +1,15 @@
+.button {
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid var(--subtle-text-color);
+  background-color: transparent;
+  border-radius: var(--border-radius);
+  padding: 1rem 1.75rem;
+  font-size: var(--small-text-size);
+  color: var(--subtle-text-color);
+  transition: all 0.3s ease;
+
+  &:hover:not(.hide-border) {
+    padding: 1rem 2.25rem;
+  }
+}

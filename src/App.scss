@@ -1,22 +1,35 @@
 * {
   --border-color: #b9b9b9;
-  --subtle-text-color: #b9b9b9;
-  --black-color: #050505;
-  --cream-color: #f5f4ed;
+  --subtle-text-color: #87867f;
+  --code-text-color: #74736e;
+  --black-color: #1f1e21;
+  --cream-color: #f7f1ea;
+  --gray-color: #f5f5f5;
+  --link-color: #006ed4;
+  --red-color: #f43407;
+  --main-body-color: #ffffff;
 
   --border-radius: 1.5rem;
+  --large-border-radius: 50px;
   --button-border-radius: 0.5rem;
+
+  --h1-text-size: 1.15em;
+  --h2-text-size: 1.05rem;
+  --p-text-size: 1rem;
+  --small-text-size: 0.95rem;
+
+  --gilda-font-family: 'Gilda Display', serif;
 
   margin: 0;
   color: var(--black-color);
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 400;
 }
 
 body {
   overscroll-behavior-y: none;
   min-height: 100vh;
-  background-color: #ffffff;
+  background-color: var(--main-body-color);
 }
 
 .App {
@@ -25,4 +38,12 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+code {
+  border-radius: 6px;
+  font-size: 85%;
+  padding: 0.2em 0.4em;
+  background-color: #818b981f;
+  font-family: 'DM Mono', monospace;
 }

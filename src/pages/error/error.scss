@@ -1,0 +1,23 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  row-gap: 1rem;
+  margin-bottom: 6rem;
+
+  .error-text {
+    font-family: 'Caveat', cursive;
+    font-size: 25rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--red-color);
+  }
+
+  .error-message {
+    font-size: var(--font-size-small);
+    color: var(--black-color);
+    margin-bottom: 2rem;
+  }
+}

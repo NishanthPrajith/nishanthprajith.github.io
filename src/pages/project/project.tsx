@@ -1,182 +1,44 @@
-import { motion, Variants } from 'framer-motion';
-import { Helmet } from 'react-helmet';
-import { useState } from 'react';
-import './project.css';
-import { Link } from 'react-router-dom';
+import './project.scss';
 
-import data from './individual-project/data.json';
+import Button from '../../components/button/button';
+import NavBar from '../../components/navbar/navbar';
+import ProjectContent from './components/project-content/project-content';
+import { Project } from '../../data/project-list';
 
-export default function Project() {
-  const [selection, setSelection] = useState(0);
-
-  const [projectData, setProjectData] = useState(data);
-
-  const animation: Variants = {
-    initial: {
-      opacity: 0,
-    },
-    final: {
-      opacity: 1,
-      transition: {
-        ease: 'easeInOut',
-        default: { delay: 1.5, duration: 1 },
-      },
-    },
-  };
-
-  const hoverProjectAnimation: Variants = {
-    animate: {
-      transition: {
-        ease: 'easeInOut',
-        duration: 0.2,
-      },
-    },
-  };
-
-  function changeCursor() {
-    window.scroll(0, 0);
-  }
-
-  function filterSelection(select: number) {
-    setSelection(select);
-
-    var arr = [];
-
-    if (select === 0) {
-      setProjectData(data);
-    } else if (select === 1) {
-      for (let i = 0; i < data.length; i++) {
-        for (let j = 0; j < data[i].id.length; j++) {
-          if (data[i].id[j] === 'Data Science') {
-            arr.push(data[i]);
-            break;
-          }
-        }
-      }
-      setProjectData(arr);
-    } else if (select === 2) {
-      for (let i = 0; i < data.length; i++) {
-        for (let j = 0; j < data[i].id.length; j++) {
-          if (data[i].id[j] === 'Software Engineering') {
-            arr.push(data[i]);
-            break;
-          }
-        }
-      }
-      setProjectData(arr);
-    } else {
-      for (let i = 0; i < data.length; i++) {
-        for (let j = 0; j < data[i].id.length; j++) {
-          if (data[i].id[j] === 'Machine Learning') {
-            arr.push(data[i]);
-            break;
-          }
-        }
-      }
-      setProjectData(arr);
-    }
-  }
-
+export default function ProjectPage({ project }: { project: Project }) {
   return (
-    <div>
-      <Helmet>
-        <title>Projects Page • Nishanth Prajith</title>
-      </Helmet>
-      <motion.div variants={animation} initial="initial" animate="final">
-        <div className="headerLanding">
-          <div>
-            <h1>Collection of all my projects.</h1>
-          </div>
-          <div className="filters">
-            <p
-              className={selection === 0 ? '' : 'btn10'}
-              onClick={() => {
-                filterSelection(0);
-              }}
-              style={
-                selection === 0
-                  ? { backgroundColor: '#1C1D20', color: 'white' }
-                  : {}
-              }
-            >
-              All
-            </p>
-            <p
-              className={selection === 1 ? '' : 'btn10'}
-              onClick={() => {
-                filterSelection(1);
-              }}
-              style={
-                selection === 1
-                  ? { backgroundColor: '#1C1D20', color: 'white' }
-                  : {}
-              }
-            >
-              Data Science<sup>3</sup>
-            </p>
-            <p
-              className={selection === 2 ? '' : 'btn10'}
-              onClick={() => {
-                filterSelection(2);
-              }}
-              style={
-                selection === 2
-                  ? { backgroundColor: '#1C1D20', color: 'white' }
-                  : {}
-              }
-            >
-              Software Engineering<sup>3</sup>
-            </p>
-            <p
-              className={selection === 3 ? '' : 'btn10'}
-              onClick={() => {
-                filterSelection(3);
-              }}
-              style={
-                selection === 3
-                  ? { backgroundColor: '#1C1D20', color: 'white' }
-                  : {}
-              }
-            >
-              Machine Learning<sup>2</sup>
-            </p>
-          </div>
+    <div className="project">
+      <NavBar />
+      <div className="project-header">
+        <div className="project-header-title-container">
+          <p className="case-study-text">Case Study</p>
+          <p className="project-title">{project.title}</p>
         </div>
-        <div className="listofProjects">
-          <div className="heading">
-            <div className="headers">
-              <p>PROJECT NAME</p>
-              <p>TAGS</p>
-            </div>
-
-            <hr className="stripe"></hr>
-          </div>
-
-          <div>
-            {projectData.map((project, index) => {
-              return (
-                <div>
-                  <Link
-                    to={'/projects/' + project.index}
-                    onClick={changeCursor}
-                  >
-                    <motion.div
-                      variants={hoverProjectAnimation}
-                      initial="initial"
-                      whileHover="animate"
-                      className="individualProject"
-                    >
-                      <h1>{project.title}</h1>
-                      <p>{project.tags}</p>
-                    </motion.div>
-                  </Link>
-                  <hr className="stripe"></hr>
-                </div>
-              );
-            })}
-          </div>
+        <p className="project-description">{project.description}</p>
+        <div className="button-container">
+          {project.link && (
+            <Button
+              onClick={() => {
+                window.open(project.link, '_blank');
+              }}
+            >
+              Open Project
+            </Button>
+          )}
         </div>
-      </motion.div>
+      </div>
+
+      <div
+        className="project-image"
+        style={{
+          ...(project.image
+            ? { backgroundImage: `url(${project.image})` }
+            : {}),
+          ...(project.imageStyle ? project.imageStyle : {}),
+        }}
+      />
+
+      <ProjectContent content={project.content ?? []} />
     </div>
   );
 }

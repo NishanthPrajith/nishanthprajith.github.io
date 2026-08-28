@@ -1,0 +1,71 @@
+.benchmark-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: Inter, sans-serif;
+  color: #222;
+  width: 100%;
+  table-layout: fixed;
+  padding: 1rem 0;
+
+  th,
+  td {
+    border-top: 0.5px solid var(--border-color);
+    text-align: center;
+    vertical-align: middle;
+    white-space: normal;
+    word-break: break-word;
+    font-size: 0.85rem;
+    font-weight: 400;
+  }
+
+  th:not(.group-row th),
+  td {
+    padding: 1rem 0.75rem;
+  }
+
+  tr td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  tbody th {
+    text-align: left;
+  }
+
+  thead th {
+    border-top: none;
+  }
+
+  /* Group headings */
+  .group-row th {
+    border: none;
+    padding-bottom: 0.75rem;
+    color: var(--subtle-text-color);
+    background: transparent;
+  }
+
+  /* Column headings */
+  thead th span {
+    display: block;
+    margin-top: 0.35rem;
+    color: var(--subtle-text-color);
+    font-weight: 400;
+  }
+
+  /* Section rows */
+  .section td {
+    background: var(--cream-color);
+    color: var(--code-text-color);
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* Row subtitles */
+  small {
+    display: block;
+    margin-top: 0.3rem;
+    color: var(--subtle-text-color);
+    font-size: 0.85rem;
+  }
+}
