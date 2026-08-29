@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 640" role="img" aria-labelledby="title desc">
+  <title id="title">CarMe data flow architecture</title>
+  <desc id="desc">Flow diagram showing training, inference, Firestore lookup, and Flutter mobile app UI.</desc>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#4a4a4a"/>
+    </marker>
+    <marker id="arrow-start" markerWidth="8" markerHeight="8" refX="1" refY="4" orient="auto">
+      <path d="M8,0 L0,4 L8,8 Z" fill="#4a4a4a"/>
+    </marker>
+    <style>
+      .box { fill: #ececec; stroke: #bdbdbd; stroke-width: 1.2; }
+      .label { font: 600 14px "Segoe UI", Arial, sans-serif; fill: #2f2f2f; }
+      .note { font: 12px "Segoe UI", Arial, sans-serif; fill: #444; }
+      .arrow { fill: none; stroke: #4a4a4a; stroke-width: 1.5; marker-end: url(#arrow); }
+      .arrow-bi { fill: none; stroke: #4a4a4a; stroke-width: 1.5; marker-end: url(#arrow); marker-start: url(#arrow-start); }
+    </style>
+  </defs>
+
+  <!-- Cars Dataset -->
+  <rect class="box" x="24" y="248" width="170" height="48" rx="10"/>
+  <text class="label" x="109" y="277" text-anchor="middle">Cars Dataset (Training)</text>
+
+  <!-- Car Image -->
+  <rect class="box" x="372" y="268" width="120" height="44" rx="10"/>
+  <text class="label" x="432" y="295" text-anchor="middle">Car Image</text>
+
+  <!-- Car Information -->
+  <rect class="box" x="688" y="268" width="150" height="44" rx="10"/>
+  <text class="label" x="763" y="295" text-anchor="middle">Car Information</text>
+
+  <!-- Display Car Information -->
+  <rect class="box" x="342" y="548" width="180" height="44" rx="10"/>
+  <text class="label" x="432" y="575" text-anchor="middle">Display Car Information</text>
+
+  <!-- ML Model -->
+  <text class="label" x="432" y="42" text-anchor="middle">Embed ML Model (.pt)</text>
+  <g transform="translate(392, 52)">
+    <path d="M40 8 C28 8 18 18 18 30 C18 42 28 52 40 52 C52 52 62 42 62 30 C62 18 52 8 40 8Z" fill="#d8d8d8" stroke="#9a9a9a" stroke-width="1.2"/>
+    <path d="M28 24 C32 18 48 18 52 24 M26 34 C34 28 46 28 54 34 M30 44 C36 38 44 38 50 44" fill="none" stroke="#7a7a7a" stroke-width="1.2"/>
+    <circle cx="34" cy="30" r="2" fill="#7a7a7a"/>
+    <circle cx="46" cy="30" r="2" fill="#7a7a7a"/>
+    <path d="M40 14 L40 22 M34 16 L46 16" stroke="#7a7a7a" stroke-width="1"/>
+  </g>
+
+  <!-- Firestore DB -->
+  <text class="label" x="763" y="42" text-anchor="middle">Firestore DB</text>
+  <g transform="translate(728, 52)">
+    <path d="M35 8 L58 20 L35 32 L12 20 Z" fill="#ffca28"/>
+    <path d="M35 18 L58 30 L35 42 L12 30 Z" fill="#ffa000"/>
+    <path d="M35 28 L58 40 L35 52 L12 40 Z" fill="#4285f4"/>
+  </g>
+
+  <!-- Flutter cloud -->
+  <path class="box" d="M300 430 C270 430 252 410 258 388 C240 382 238 352 262 346 C268 322 296 318 312 334 C332 322 366 334 366 362 C392 362 404 388 386 408 C376 426 352 430 332 430 Z"/>
+  <text class="label" x="332" y="392" text-anchor="middle">Flutter Mobile App UI</text>
+
+  <!-- User -->
+  <circle cx="170" cy="404" r="12" fill="#d8d8d8" stroke="#9a9a9a" stroke-width="1.2"/>
+  <path d="M148 438 C148 422 192 422 192 438" fill="#d8d8d8" stroke="#9a9a9a" stroke-width="1.2"/>
+  <text class="note" x="170" y="458" text-anchor="middle">User</text>
+
+  <!-- Training flow -->
+  <path class="arrow" d="M194 248 C260 170 360 120 400 104"/>
+  <text class="note" x="260" y="168" text-anchor="middle">Train a custom model &amp; save it as a PyTorch Model</text>
+
+  <!-- Camera to image -->
+  <path class="arrow" d="M332 430 V312"/>
+  <text class="note" x="248" y="372">Take a picture with the camera</text>
+
+  <!-- Image to model -->
+  <path class="arrow" d="M432 268 V104"/>
+  <text class="note" x="520" y="196">Send the picture to the machine learning model</text>
+
+  <!-- Model to Firestore -->
+  <path class="arrow" d="M454 72 H708"/>
+  <text class="note" x="581" y="58" text-anchor="middle">Send predicted class to the DB to get more information</text>
+
+  <!-- Firestore to car info -->
+  <path class="arrow" d="M763 104 V248"/>
+
+  <!-- Car info back to app -->
+  <path class="arrow" d="M688 290 H520 V430"/>
+  <text class="note" x="620" y="360">Return predicted car information</text>
+
+  <!-- User interaction -->
+  <path class="arrow-bi" d="M192 392 H258"/>
+
+  <!-- App to display -->
+  <path class="arrow" d="M332 430 V548"/>
+</svg>
