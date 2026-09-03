@@ -12,9 +12,9 @@
     flex-direction: column;
     align-items: center;
     padding: 0 4rem;
-    row-gap: 1.75rem;
+    row-gap: 0.5rem;
     margin: 6rem 0;
-    margin-bottom: 6rem;
+    margin-bottom: 0rem;
 
     .project-header-title-container {
       display: flex;
@@ -30,10 +30,10 @@
     }
 
     .project-title {
-      font-size: 4rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+      font-size: 4.75rem;
       font-weight: 500;
+      letter-spacing: 0.05em;
+      font-family: var(--hedvig-letters-serif-font-family);
     }
 
     .project-description {
@@ -42,7 +42,7 @@
       justify-content: space-between;
       align-items: flex-end;
       text-align: center;
-      max-width: 700px;
+      max-width: 750px;
       color: var(--subtle-text-color);
 
       &::before {
@@ -52,7 +52,7 @@
     }
 
     .button-container {
-      margin-top: 1rem;
+      margin-top: 2rem;
     }
   }
 

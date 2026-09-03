@@ -1,4 +1,5 @@
 import { dedent } from '../../../utils/dedent';
+import { getBarColors } from '../../chart-colors';
 import { ProjectContentType, ProjectData } from '../types';
 import {
   californiaFireCleanedTableData,

@@ -6,7 +6,7 @@ export default function Image({
   image,
   images,
   height,
-  backgroundColor = 'var(--cream-color)',
+  backgroundColor = 'rgb(217, 205, 204)',
   caption,
   credits,
   showPadding,

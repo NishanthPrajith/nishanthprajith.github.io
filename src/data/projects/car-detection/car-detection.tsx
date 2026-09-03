@@ -1,4 +1,5 @@
 import { ProjectContentType, ProjectData } from '../types';
+import FlowDiagram from './flow-diagram';
 
 export const carDetectionContent: ProjectData[] = [
   {
@@ -30,9 +31,6 @@ export const carDetectionContent: ProjectData[] = [
   {
     type: ProjectContentType.heading,
     content: 'Design',
-  },
-  {
-    type: ProjectContentType.subheading,
     subtitle: 'Software Design',
   },
   {
@@ -77,11 +75,8 @@ export const carDetectionContent: ProjectData[] = [
     ),
   },
   {
-    type: ProjectContentType.image,
-    imageData: {
-      image: 'assets/projects/car-detection/data-flow.png',
-      height: '15rem',
-    },
+    type: ProjectContentType.text,
+    htmlContent: <FlowDiagram />,
   },
   {
     type: ProjectContentType.subheading,

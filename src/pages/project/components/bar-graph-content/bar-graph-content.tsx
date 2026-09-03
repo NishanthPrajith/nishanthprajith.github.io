@@ -11,7 +11,7 @@ import {
   ChartData,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import { chartColors } from '../../../../data/chart-colors';
+import { chartColors, getBarColors } from '../../../../data/chart-colors';
 import { ChartProps } from '../../../../data/projects/types';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
@@ -41,15 +41,13 @@ export default function BarChart({
   hideTopPadding = false,
 }: ChartProps) {
   const graphLabels = labels ?? datasets.map((d) => d.label);
+
   const data: ChartData<'bar'> = {
     labels: graphLabels,
     datasets: datasets.map((d, idx) => ({
       label: d.label,
       data: d.data,
-      backgroundColor:
-        datasets.length > 1
-          ? chartColors[idx % chartColors.length]
-          : chartColors,
+      backgroundColor: getBarColors(d.data),
       borderRadius: 4,
       maxBarThickness: 100,
     })),

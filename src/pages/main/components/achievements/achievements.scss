@@ -29,6 +29,7 @@
     width: 100%;
     max-width: 525px;
     height: 25rem;
+    text-align: center;
 
     .achievement-item-image {
       width: 100%;
@@ -37,7 +38,7 @@
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
-      background-color: var(--cream-color);
+      background-color: var(--gray-color);
     }
 
     &:nth-child(1) {

@@ -59,7 +59,14 @@ export default function Gallery() {
       )}
 
       <div className="gallery-actions">
-        <Button onClick={sheet.open}>View More</Button>
+        <Button
+          onClick={sheet.open}
+          style={{
+            color: 'var(--white-color)',
+          }}
+        >
+          View More
+        </Button>
       </div>
 
       <BottomSheet

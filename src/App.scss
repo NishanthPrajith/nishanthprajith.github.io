@@ -2,14 +2,13 @@
   --border-color: #b9b9b9;
   --subtle-text-color: #87867f;
   --code-text-color: #74736e;
-  --black-color: #1f1e21;
-  --cream-color: #f7f1ea;
-  --gray-color: #f5f5f5;
+  --black-color: rgb(15, 14, 13);
+  --gray-color: rgb(242, 241, 240);
   --link-color: #006ed4;
   --red-color: #f43407;
-  --main-body-color: #ffffff;
+  --white-color: #ffffff;
 
-  --border-radius: 1.5rem;
+  --border-radius: 1rem;
   --large-border-radius: 50px;
   --button-border-radius: 0.5rem;
 
@@ -29,7 +28,7 @@
 body {
   overscroll-behavior-y: none;
   min-height: 100vh;
-  background-color: var(--main-body-color);
+  background-color: var(--white-color);
 }
 
 .App {

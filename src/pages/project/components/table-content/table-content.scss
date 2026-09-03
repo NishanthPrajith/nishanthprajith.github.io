@@ -35,6 +35,7 @@
 
   thead th {
     border-top: none;
+    font-weight: 600;
   }
 
   /* Group headings */
@@ -55,8 +56,8 @@
 
   /* Section rows */
   .section td {
-    background: var(--cream-color);
-    color: var(--code-text-color);
+    background: var(--black-color);
+    color: var(--white-color);
     text-align: left;
     padding: 0.5rem 0.75rem;
   }

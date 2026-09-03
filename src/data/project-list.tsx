@@ -34,10 +34,7 @@ export const projectList: Project[] = [
   {
     id: 'california-wildfire-detection',
     title: 'California Wildfire Detection',
-    description: `In this group project, my team analyzed historical wildfire data to identify regions 
-    in California that are most susceptible to fire risks and quantify the level of threat 
-    across different areas. We then evaluated various machine learning models to predict 
-    wildfire occurrences based on weather patterns and environmental factors`,
+    description: `Our team analyzed historical wildfire data to identify high-risk regions in California and evaluated machine learning models to predict wildfire occurrences using weather and environmental factors.`,
     tags: ['Scikit-learn', 'Pandas', 'Numpy'],
     link: 'https://github.com/NishanthPrajith/Data_Science_Final_Project',
     content: californiaWildfireContent,
