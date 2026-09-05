@@ -5,7 +5,6 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 8rem;
-  background-color: #ffffff;
 
   .project-header {
     display: flex;
@@ -13,8 +12,8 @@
     align-items: center;
     padding: 0 4rem;
     row-gap: 0.5rem;
-    margin: 6rem 0;
-    margin-bottom: 0rem;
+    margin-bottom: 5rem;
+    margin-top: 8rem;
 
     .project-header-title-container {
       display: flex;
@@ -27,43 +26,39 @@
     .case-study-text {
       color: var(--subtle-text-color);
       font-size: var(--small-text-size);
+      color: var(--gray-color);
+      font-size: 0.875rem;
     }
 
     .project-title {
-      font-size: 4.75rem;
       font-weight: 500;
-      letter-spacing: 0.05em;
+      line-height: 1.05;
       font-family: var(--hedvig-letters-serif-font-family);
+      margin: 0 0 1.5rem;
     }
 
     .project-description {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-end;
       text-align: center;
-      max-width: 750px;
+      max-width: 700px;
       color: var(--subtle-text-color);
+      margin: 0 0 2rem;
+      font-size: var(--medium-text-size);
+      line-height: 1.45;
 
       &::before {
         content: '';
         flex: 2;
       }
     }
-
-    .button-container {
-      margin-top: 2rem;
-    }
   }
 
   .project-image {
-    width: 65%;
-    height: 45rem;
+    height: 40rem;
+    width: 60%;
     background-color: 'red';
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
-    border-radius: var(--border-radius);
-    margin-bottom: 2rem;
+    border-radius: 0.625rem;
   }
 }

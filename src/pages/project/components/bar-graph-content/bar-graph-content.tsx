@@ -11,7 +11,7 @@ import {
   ChartData,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import { chartColors, getBarColors } from '../../../../data/chart-colors';
+import { getBarColors } from '../../../../data/chart-colors';
 import { ChartProps } from '../../../../data/projects/types';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
@@ -145,7 +145,7 @@ export default function BarChart({
 
   return (
     <div
-      className="chart-container"
+      className="chart-container project-dynamic-content"
       style={hideTopPadding ? { paddingTop: '0' } : {}}
     >
       <div className="chart-canvas">

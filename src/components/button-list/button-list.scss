@@ -3,8 +3,8 @@
   align-items: center;
   gap: 0;
   padding: 0.5rem;
-  border-radius: var(--border-radius);
-  background-color: var(--gray-color);
+  border-radius: var(--large-border-radius);
+  background-color: var(--light-gray-color);
   position: relative;
   width: max-content;
   max-width: 100%;
@@ -23,8 +23,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: color-mix(in srgb, var(--border-color) 30%, transparent);
-  border-radius: calc(var(--border-radius) - 0.5rem);
+  background-color: var(--border-color);
+  border-radius: calc(var(--large-border-radius) - 0.5rem);
   z-index: 0;
   pointer-events: none;
 }

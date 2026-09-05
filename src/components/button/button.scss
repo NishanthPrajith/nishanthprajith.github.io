@@ -4,12 +4,13 @@
   border: 1px solid var(--subtle-text-color);
   background-color: transparent;
   border-radius: var(--large-border-radius);
-  padding: 1rem 1.75rem;
+  padding: 0.75rem 1.5rem;
   font-size: var(--small-text-size);
   color: var(--subtle-text-color);
   transition: all 0.3s ease;
 
   &:hover:not(.hide-border) {
-    padding: 1rem 2.25rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }

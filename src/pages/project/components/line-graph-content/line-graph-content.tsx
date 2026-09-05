@@ -143,7 +143,7 @@ export default function LineChart({
 
   return (
     <div
-      className="chart-container"
+      className="chart-container project-dynamic-content"
       style={hideTopPadding ? { paddingTop: '0' } : {}}
     >
       <div className="chart-canvas">

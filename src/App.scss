@@ -1,34 +1,28 @@
 * {
-  --border-color: #b9b9b9;
+  --border-color: rgba(0, 0, 0, 0.12);
   --subtle-text-color: #87867f;
   --code-text-color: #74736e;
   --black-color: rgb(15, 14, 13);
-  --gray-color: rgb(242, 241, 240);
+  --gray-color: rgba(0, 0, 0, 0.6);
   --link-color: #006ed4;
   --red-color: #f43407;
   --white-color: #ffffff;
+  --light-gray-color: #fafafa;
 
   --border-radius: 1rem;
   --large-border-radius: 50px;
   --button-border-radius: 0.5rem;
 
-  --h1-text-size: 1.15em;
-  --h2-text-size: 1.05rem;
-  --p-text-size: 1rem;
-  --small-text-size: 0.95rem;
-
-  --gilda-font-family: 'Gilda Display', serif;
+  --h1-text-size: 3.5em;
+  --h2-text-size: 1.25rem;
+  --p-text-size: 0.975rem;
+  --medium-text-size: 1.025rem;
+  --small-text-size: 0.875rem;
 
   margin: 0;
   color: var(--black-color);
   font-family: 'DM Sans', sans-serif;
   font-size: 400;
-}
-
-body {
-  overscroll-behavior-y: none;
-  min-height: 100vh;
-  background-color: var(--white-color);
 }
 
 .App {
@@ -45,4 +39,34 @@ code {
   padding: 0.2em 0.4em;
   background-color: #818b981f;
   font-family: 'DM Mono', monospace;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  font-size: var(--p-text-size);
+  line-height: 1.6;
+}
+
+.divider {
+  background-color: var(--border-color);
+  height: 1px;
+  width: 100%;
+}
+
+.code-content,
+.short-display {
+  margin: 0 3rem;
+}
+
+.code-content {
+  font-size: 0.975rem;
+}
+
+h1 {
+  font-size: var(--h1-text-size);
+}
+
+h2 {
+  font-size: var(--h2-text-size);
 }

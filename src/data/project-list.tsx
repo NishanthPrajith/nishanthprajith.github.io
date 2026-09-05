@@ -17,10 +17,10 @@ export type Project = {
 
 export const projectList: Project[] = [
   {
-    id: 'car-detection-app',
-    title: 'Car Detection App',
+    id: 'ai-car-recognition-app',
+    title: 'AI Car Recognition App',
     description:
-      'Developed a mobile app that identifies cars from smartphone photos using a custom PyTorch model trained on 1M+ images across 900+ car classes, then displays detailed vehicle specifications. Built with PyTorch, Flutter, and Firebase.',
+      'Built a mobile app that identifies car makes and models from photos using a PyTorch model trained on 1M+ images across 900+ classes, with detailed vehicle specifications. Built with PyTorch, Flutter, and Firebase.',
     tags: ['Flutter', 'PyTorch', 'Firebase'],
     link: 'https://github.com/NishanthPrajith/carIdentificationApp',
     content: carDetectionContent,
@@ -32,8 +32,8 @@ export const projectList: Project[] = [
     },
   },
   {
-    id: 'california-wildfire-detection',
-    title: 'California Wildfire Detection',
+    id: 'california-wildfire-risk-prediction',
+    title: 'California Wildfire Risk Prediction',
     description: `Our team analyzed historical wildfire data to identify high-risk regions in California and evaluated machine learning models to predict wildfire occurrences using weather and environmental factors.`,
     tags: ['Scikit-learn', 'Pandas', 'Numpy'],
     link: 'https://github.com/NishanthPrajith/Data_Science_Final_Project',

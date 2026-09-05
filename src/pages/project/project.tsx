@@ -4,15 +4,20 @@ import Button from '../../components/button/button';
 import NavBar from '../../components/navbar/navbar';
 import ProjectContent from './components/project-content/project-content';
 import { Project } from '../../data/project-list';
+import { Helmet } from 'react-helmet';
 
 export default function ProjectPage({ project }: { project: Project }) {
   return (
     <div className="project">
+      <Helmet>
+        <title>{project.title} | Case Study</title>
+        <meta name="description" content={project.description} />
+      </Helmet>
       <NavBar />
       <div className="project-header">
         <div className="project-header-title-container">
           <p className="case-study-text">Case Study</p>
-          <p className="project-title">{project.title}</p>
+          <h1 className="project-title">{project.title}</h1>
         </div>
         <p className="project-description">{project.description}</p>
         <div className="button-container">

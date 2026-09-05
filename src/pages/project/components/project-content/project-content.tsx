@@ -20,12 +20,14 @@ const RenderContent = ({ item, key }: { item: ProjectData; key: string }) => {
     return (
       <div className="project-content-heading" key={key}>
         {item.content && (
-          <p className="project-content-title short-display">{item.content}</p>
+          <h2 className="project-content-title short-display">
+            {item.content}
+          </h2>
         )}
         {item.subtitle && (
-          <p className="project-content-subheading short-display">
+          <h3 className="project-content-subheading short-display">
             {item.subtitle}
-          </p>
+          </h3>
         )}
       </div>
     );
