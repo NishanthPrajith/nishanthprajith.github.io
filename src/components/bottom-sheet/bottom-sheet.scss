@@ -1,7 +1,7 @@
 .bottom-sheet-portal {
   position: fixed;
   inset: 0;
-  z-index: 4000;
+  z-index: 10;
   isolation: isolate;
 }
 
@@ -23,7 +23,7 @@
   display: flex;
   flex-direction: column;
   background: var(--white-color);
-  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  border-radius: var(--medium-border-radius) var(--medium-border-radius) 0 0;
   overflow: hidden;
   transform: translateY(100%);
   box-shadow: 0 -24px 80px rgba(0, 0, 0, 0.18);
@@ -38,7 +38,7 @@
   border: 0;
   background: transparent;
   cursor: grab;
-  z-index: 2;
+  z-index: 10;
 
   &::before {
     content: '';
@@ -63,7 +63,7 @@
   border: 0;
   background: transparent;
   cursor: grab;
-  z-index: 2;
+  z-index: 10;
 
   &::before {
     content: '';
@@ -84,10 +84,41 @@
   overflow-y: auto;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
-  padding: 72px 24px 40px;
+}
 
-  @media (min-width: 768px) {
-    padding-inline: clamp(24px, 5vw, 80px);
+.bottom-sheet-close-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.bottom-sheet-close {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--black-color) 10%, transparent);
+  backdrop-filter: blur(8px);
+  color: var(--black-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0.75rem;
+  margin: 1.25rem;
+
+  &:hover {
+    background: color-mix(in srgb, var(--black-color) 8%, var(--white-color));
+  }
+
+  &:active {
+    transform: scale(0.94);
+  }
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
 

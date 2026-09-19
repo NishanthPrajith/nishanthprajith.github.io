@@ -1,23 +1,59 @@
+@keyframes error-eye-blink {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  94%,
+  96% {
+    transform: scaleY(0.06);
+  }
+}
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: var(--light-blue-color);
+  cursor: pointer;
+}
+
 .error {
   display: flex;
   flex-direction: column;
   align-items: center;
   flex: 1;
-  justify-content: center;
-  row-gap: 1rem;
+  justify-content: space-between;
+  row-gap: 2rem;
   margin-bottom: 6rem;
 
-  .error-text {
-    font-family: 'Caveat', cursive;
-    font-size: 25rem;
-    font-weight: 800;
-    line-height: 1.1;
-    color: var(--red-color);
+  &-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 2rem;
   }
 
-  .error-message {
-    font-size: var(--font-size-small);
-    color: var(--black-color);
+  &-eyes {
+    margin-bottom: 1rem;
+
+    &-eye {
+      transform-box: fill-box;
+      transform-origin: center center;
+      animation: error-eye-blink 2.5s ease-in-out infinite;
+    }
+
+    &-eye-right {
+      animation-delay: 0.05s;
+    }
+  }
+
+  &-message {
+    font-size: var(--p-text-size);
+    color: var(--white-color);
     margin-bottom: 2rem;
   }
 }

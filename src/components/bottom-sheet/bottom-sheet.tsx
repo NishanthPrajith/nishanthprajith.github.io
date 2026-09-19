@@ -11,6 +11,7 @@ import {
   useState,
 } from 'react';
 import { createPortal } from 'react-dom';
+import ScrollIndicator from '../scroll-indicator/scroll-indicator';
 
 export type BottomSheetProps = {
   isOpen: boolean;
@@ -20,6 +21,7 @@ export type BottomSheetProps = {
   subtitle?: string;
   header?: ReactNode;
   ariaLabel?: string;
+  showScrollIndicator?: boolean;
   scaleTargetSelector?: string;
   className?: string;
   contentClassName?: string;
@@ -44,6 +46,7 @@ export default function BottomSheet({
   subtitle,
   header,
   ariaLabel = 'Bottom sheet',
+  showScrollIndicator = false,
   scaleTargetSelector = '.App',
   className,
   contentClassName,
@@ -53,6 +56,7 @@ export default function BottomSheet({
   const sheetRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
   const scaleTargetRef = useRef<HTMLElement | null>(null);
+  const rootRef = useRef<HTMLDivElement>(null);
 
   // Function to run the close animation
   const runCloseAnimation = useCallback(() => {
@@ -202,7 +206,34 @@ export default function BottomSheet({
         />
         {/* End Close Buttons */}
 
-        <div className={scrollClassName}>
+        <div className="bottom-sheet-close-container">
+          <button
+            type="button"
+            className="bottom-sheet-close"
+            aria-label={`Close ${ariaLabel}`}
+            onClick={runCloseAnimation}
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              aria-hidden="true"
+            >
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        {showScrollIndicator && (
+          <ScrollIndicator
+            variant="bottom-sheet"
+            scrollContainerRef={rootRef}
+          />
+        )}
+
+        <div className={scrollClassName} ref={rootRef}>
           {header ??
             (title || subtitle ? (
               <motion.header

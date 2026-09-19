@@ -4,21 +4,11 @@ type ButtonProps = {
   children: React.ReactNode;
   onClick: () => void;
   style?: React.CSSProperties;
-  hideBorder?: boolean;
 };
 
-export default function Button({
-  children,
-  onClick,
-  style,
-  hideBorder = false,
-}: ButtonProps) {
+export default function Button({ children, onClick, style }: ButtonProps) {
   return (
-    <button
-      className={`button ${hideBorder ? 'hide-border' : ''}`}
-      onClick={onClick}
-      style={style ?? {}}
-    >
+    <button className="button" onClick={onClick} style={style ?? {}}>
       {children}
     </button>
   );

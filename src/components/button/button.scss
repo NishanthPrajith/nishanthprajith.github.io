@@ -1,16 +1,15 @@
 .button {
   text-align: center;
   cursor: pointer;
-  border: 1px solid var(--subtle-text-color);
-  background-color: transparent;
+  border: none;
   border-radius: var(--large-border-radius);
   padding: 0.75rem 1.5rem;
   font-size: var(--small-text-size);
-  color: var(--subtle-text-color);
+  color: var(--white-color);
+  background-color: var(--black-color);
   transition: all 0.3s ease;
 
-  &:hover:not(.hide-border) {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  &:hover {
+    background-color: var(--gray-color);
   }
 }

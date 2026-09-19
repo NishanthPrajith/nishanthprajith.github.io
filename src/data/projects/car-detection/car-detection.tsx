@@ -1,4 +1,4 @@
-import { ProjectContentType, ProjectData } from '../types';
+import { ProjectContentType, ProjectData } from '../../types';
 import FlowDiagram from './flow-diagram';
 
 export const carDetectionContent: ProjectData[] = [
@@ -577,7 +577,7 @@ export const carDetectionContent: ProjectData[] = [
   {
     type: ProjectContentType.footer,
     content:
-      'This project is the combined effort of Nishanth Prajith, Yue Qian, Kareem Elsheikh, and Xiaohu Zheng.',
+      'Cowritten with Nishanth Prajith, Yue Qian, Kareem Elsheikh, and Xiaohu Zheng.',
     links: [
       {
         text: 'DVM Dataset',
