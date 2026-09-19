@@ -1,0 +1,38 @@
+.carousel {
+  --gap: 1.25rem;
+  scrollbar-width: none;
+
+  &-section {
+    margin-bottom: 7rem;
+  }
+
+  &-track {
+    display: flex;
+    gap: var(--gap);
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-block: 2rem;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-item {
+    user-select: none;
+
+    &-stack {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: var(--gap);
+    }
+  }
+}

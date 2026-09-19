@@ -1,0 +1,30 @@
+.gallery-carousel {
+  margin-bottom: 7rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 2rem;
+  width: 100%;
+  height: 100%;
+
+  &-sheet-view-title {
+    font-family: var(--marcellus-font);
+    font-size: calc(var(--h2-text-size) * 1.5);
+    text-align: center;
+  }
+
+  &-buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  &-buttons-sheet-view {
+    position: fixed;
+    bottom: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

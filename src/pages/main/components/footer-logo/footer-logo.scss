@@ -1,0 +1,10 @@
+.footer-logo {
+  --size: 3.5rem;
+  display: flex;
+  justify-content: center;
+
+  svg {
+    width: var(--size);
+    height: var(--size);
+  }
+}

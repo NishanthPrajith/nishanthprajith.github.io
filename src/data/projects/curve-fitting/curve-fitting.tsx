@@ -1,5 +1,5 @@
 import { dedent } from '../../../utils/dedent';
-import { ProjectContentType, ProjectData } from '../types';
+import { ProjectContentType, ProjectData } from '../../types';
 
 export const curveFittingContent: ProjectData[] = [
   {

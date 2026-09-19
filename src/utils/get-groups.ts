@@ -1,4 +1,4 @@
-import { TableColumn } from '../data/projects/types';
+import { TableColumn } from '../data/types';
 
 export const getGroups = (columns: TableColumn[]) => {
   const groups: {

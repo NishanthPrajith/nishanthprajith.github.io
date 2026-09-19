@@ -1,4 +1,4 @@
-import { TableData } from '../types';
+import { TableData } from '../../types';
 
 export const confusionMatrixTableData: TableData = {
   shortTable: true,
@@ -33,7 +33,6 @@ export const confusionMatrixTableData: TableData = {
 };
 
 export const classificationReportTableData: TableData = {
-  shortTable: true,
   columns: [
     {
       id: 'precision',
