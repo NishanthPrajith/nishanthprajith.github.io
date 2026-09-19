@@ -3,6 +3,12 @@ body.bottom-sheet-open .scroll-indicator[data-variant='main'] {
   pointer-events: none;
 }
 
+.scroll-indicator[data-variant='bottom-sheet'] {
+  position: absolute;
+  z-index: 12;
+  pointer-events: none;
+}
+
 .scroll-indicator {
   --height: 7.25dvh;
 

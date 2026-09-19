@@ -1,30 +1,32 @@
 import './scroll-indicator.scss';
 
-import { RefObject, useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 type ScrollIndicatorProps = {
   variant?: 'main' | 'bottom-sheet';
-  scrollContainerRef?: RefObject<HTMLElement | null>;
+  scrollContainer?: HTMLElement | null;
 };
 
 export default function ScrollIndicator({
   variant = 'main',
-  scrollContainerRef,
+  scrollContainer,
 }: ScrollIndicatorProps) {
   const thumbRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     const thumb = thumbRef.current;
-    const container = scrollContainerRef?.current ?? null;
-
     if (!thumb) {
       return;
     }
 
+    if (variant === 'bottom-sheet' && !scrollContainer) {
+      return;
+    }
+
+    const container = variant === 'bottom-sheet' ? scrollContainer : null;
+
     const update = () => {
-      // Main page scroll is locked while the bottom sheet is open; ignore window
-      // updates until it closes (thumb stays at the last value).
       if (!container && document.body.classList.contains('bottom-sheet-open')) {
         return;
       }
@@ -40,20 +42,24 @@ export default function ScrollIndicator({
 
     update();
 
-    const scrollTarget = container ?? window;
+    const scrollTarget: EventTarget = container ?? window;
     scrollTarget.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
 
-    if (!container) {
-      window.addEventListener('resize', update);
+    const resizeObserver =
+      container && typeof ResizeObserver !== 'undefined'
+        ? new ResizeObserver(update)
+        : null;
+    if (container) {
+      resizeObserver?.observe(container);
     }
 
     return () => {
       scrollTarget.removeEventListener('scroll', update);
-      if (!container) {
-        window.removeEventListener('resize', update);
-      }
+      window.removeEventListener('resize', update);
+      resizeObserver?.disconnect();
     };
-  }, [scrollContainerRef]);
+  }, [variant, scrollContainer]);
 
   const node = (
     <div className="scroll-indicator" data-variant={variant}>

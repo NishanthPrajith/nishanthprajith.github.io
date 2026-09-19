@@ -24,11 +24,19 @@
     width: var(--width);
     height: 75%;
     aspect-ratio: var(--aspect-ratio);
-    background-size: cover;
-    background-position: center;
+    overflow: hidden;
     border-radius: var(--border-radius);
-    transition: all 0.65s var(--spring-bouyant);
-    will-change: background-size, filter;
+    background-color: var(--light-gray-color);
+    transition:
+      transform 0.65s var(--spring-bouyant),
+      filter 0.65s var(--spring-bouyant);
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
     &:hover {
       transform: scale(1.01);

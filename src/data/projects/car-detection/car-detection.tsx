@@ -96,7 +96,7 @@ export const carDetectionContent: ProjectData[] = [
   {
     type: ProjectContentType.image,
     imageData: {
-      image: '../../images/car-detection-app/ui/one.png',
+      image: '/images/car-detection-app/ui/one.png',
       height: '30rem',
       backgroundColor: 'transparent',
       showPadding: true,
@@ -122,7 +122,7 @@ export const carDetectionContent: ProjectData[] = [
   {
     type: ProjectContentType.image,
     imageData: {
-      image: '../../images/car-detection-app/ui/two.png',
+      image: '/images/car-detection-app/ui/two.png',
       height: '30rem',
       backgroundColor: 'transparent',
       showPadding: true,
@@ -141,7 +141,7 @@ export const carDetectionContent: ProjectData[] = [
   {
     type: ProjectContentType.image,
     imageData: {
-      image: '../../images/car-detection-app/ui/three.png',
+      image: '/images/car-detection-app/ui/three.png',
       height: '30rem',
       backgroundColor: 'transparent',
       showPadding: true,
@@ -162,7 +162,7 @@ export const carDetectionContent: ProjectData[] = [
   {
     type: ProjectContentType.image,
     imageData: {
-      images: ['../../images/car-detection-app/ui/four.png'],
+      images: ['/images/car-detection-app/ui/four.png'],
       height: '30rem',
       backgroundColor: 'transparent',
       showPadding: true,
@@ -189,8 +189,8 @@ export const carDetectionContent: ProjectData[] = [
     type: ProjectContentType.image,
     imageData: {
       images: [
-        '../../images/car-detection-app/ui/five.png',
-        '../../images/car-detection-app/ui/six.png',
+        '/images/car-detection-app/ui/five.png',
+        '/images/car-detection-app/ui/six.png',
       ],
       height: '30rem',
       backgroundColor: 'transparent',
@@ -220,8 +220,8 @@ export const carDetectionContent: ProjectData[] = [
     type: ProjectContentType.image,
     imageData: {
       images: [
-        '../../images/car-detection-app/ui/seven.png',
-        '../../images/car-detection-app/ui/eight.png',
+        '/images/car-detection-app/ui/seven.png',
+        '/images/car-detection-app/ui/eight.png',
       ],
       height: '30rem',
       backgroundColor: 'transparent',
@@ -240,7 +240,7 @@ export const carDetectionContent: ProjectData[] = [
   {
     type: ProjectContentType.image,
     imageData: {
-      images: ['../../images/car-detection-app/ui/nine.png'],
+      images: ['/images/car-detection-app/ui/nine.png'],
       height: '30rem',
       backgroundColor: 'transparent',
       showPadding: true,
@@ -259,7 +259,7 @@ export const carDetectionContent: ProjectData[] = [
   {
     type: ProjectContentType.image,
     imageData: {
-      images: ['../../images/car-detection-app/ui/ten.png'],
+      images: ['/images/car-detection-app/ui/ten.png'],
       height: '30rem',
       backgroundColor: 'transparent',
       showPadding: true,
@@ -279,7 +279,7 @@ export const carDetectionContent: ProjectData[] = [
   {
     type: ProjectContentType.image,
     imageData: {
-      images: ['../../images/car-detection-app/ui/eleven.png'],
+      images: ['/images/car-detection-app/ui/eleven.png'],
       height: '30rem',
       backgroundColor: 'transparent',
       showPadding: true,

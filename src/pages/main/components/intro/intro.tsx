@@ -1,20 +1,52 @@
 import './intro.scss';
 
-import { useLayoutEffect } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
+
+const LOADER_FALLBACK_MS = 2800;
 
 export default function Intro() {
-  useLayoutEffect(() => {
-    const loader = document.querySelector('.loading-container');
+  const loaderRef = useRef<HTMLDivElement>(null);
+  const [isReady, setIsReady] = useState(false);
 
-    window.addEventListener('animationend', () => {
-      loader?.classList.add('is-hidden');
-    });
+  useLayoutEffect(() => {
+    const loader = loaderRef.current;
+    if (!loader) {
+      setIsReady(true);
+      return;
+    }
+
+    let hidden = false;
+    const hide = () => {
+      if (hidden) return;
+      hidden = true;
+      loader.classList.add('is-hidden');
+      setIsReady(true);
+    };
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      hide();
+      return;
+    }
+
+    const onEnd = (event: AnimationEvent) => {
+      if (event.animationName === 'gradient-rise') {
+        hide();
+      }
+    };
+
+    loader.addEventListener('animationend', onEnd);
+    const timeoutId = window.setTimeout(hide, LOADER_FALLBACK_MS);
+
+    return () => {
+      loader.removeEventListener('animationend', onEnd);
+      window.clearTimeout(timeoutId);
+    };
   }, []);
 
   return (
     <>
-      <div className="loading-container" />
-      <section className="intro section">
+      <div className="loading-container" ref={loaderRef} />
+      <section className={`intro section${isReady ? ' is-ready' : ''}`}>
         <div>
           <div className="hero">
             <h1 className="hero-title">

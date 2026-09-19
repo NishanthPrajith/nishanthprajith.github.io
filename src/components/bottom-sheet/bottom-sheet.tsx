@@ -56,7 +56,7 @@ export default function BottomSheet({
   const sheetRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
   const scaleTargetRef = useRef<HTMLElement | null>(null);
-  const rootRef = useRef<HTMLDivElement>(null);
+  const [scrollNode, setScrollNode] = useState<HTMLDivElement | null>(null);
 
   // Function to run the close animation
   const runCloseAnimation = useCallback(() => {
@@ -226,14 +226,7 @@ export default function BottomSheet({
           </button>
         </div>
 
-        {showScrollIndicator && (
-          <ScrollIndicator
-            variant="bottom-sheet"
-            scrollContainerRef={rootRef}
-          />
-        )}
-
-        <div className={scrollClassName} ref={rootRef}>
+        <div className={scrollClassName} ref={setScrollNode}>
           {header ??
             (title || subtitle ? (
               <motion.header
@@ -254,6 +247,13 @@ export default function BottomSheet({
             ) : null)}
           {children}
         </div>
+
+        {showScrollIndicator && (
+          <ScrollIndicator
+            variant="bottom-sheet"
+            scrollContainer={scrollNode}
+          />
+        )}
       </div>
     </div>,
     document.body

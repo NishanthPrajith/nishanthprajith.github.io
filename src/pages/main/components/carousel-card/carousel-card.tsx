@@ -16,6 +16,7 @@ export default function CarouselCard({
 }: Props) {
   const isClickable = item.href && item.href !== '#';
   const showCtaText = Boolean(item.title) && variant === 'project';
+  const imageSrc = item.photo?.thumbnail ?? item.image;
 
   const classNames = [
     'carousel-card',
@@ -57,12 +58,15 @@ export default function CarouselCard({
           : {}
       }
     >
-      <div
-        className="carousel-card-bg"
-        style={{
-          backgroundImage: `url('${item?.photo?.thumbnail ?? item.image}')`,
-        }}
-      />
+      <div className="carousel-card-bg">
+        <img
+          src={imageSrc}
+          alt={item.title ?? ''}
+          loading="lazy"
+          decoding="async"
+          draggable={false}
+        />
+      </div>
       {showCtaText && (
         <div className="carousel-card-caption">
           <div className="carousel-card-text">

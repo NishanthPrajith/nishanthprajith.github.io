@@ -9,41 +9,34 @@
   );
 }
 
-@property --r {
-  syntax: '<number>';
-  inherits: false;
-  initial-value: 1.7;
-}
-
 .loading-container {
   --duration: 2s;
   --type: cubic-bezier(0.65, 0, 0.35, 1);
   --r-start: 1.7; // higher = longer pure black phase
 
   position: fixed;
-  top: 0;
-  left: 50%;
-  width: 200vmax;
-  height: 100dvh;
-  transform: translateX(-50%);
+  inset: 0;
   z-index: 1000;
   overflow: hidden;
   overscroll-behavior: contain;
   background-color: var(--black-color);
-
-  // same stops as --background-gradient, scaled by --r
-  background-image: radial-gradient(
-    ellipse at 50% 0%,
-    #010101 0%,
-    #010101 calc(var(--r) * 50%),
-    var(--blue-color) calc(var(--r) * 55%),
-    var(--white-color) calc(var(--r) * 65%),
-    var(--white-color) calc(var(--r) * 100%)
-  );
-  animation: gradient-rise var(--duration) var(--type) both;
   transition:
     opacity 0.6s ease,
     visibility 0s linear 0.6s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 200vmax;
+    height: 100dvh;
+    transform: translateX(-50%) scale(var(--r-start));
+    transform-origin: top center;
+    background: var(--background-gradient);
+    animation: gradient-rise var(--duration) var(--type) both;
+    pointer-events: none;
+  }
 
   &.is-hidden {
     opacity: 0;
@@ -54,17 +47,17 @@
 
 @keyframes gradient-rise {
   from {
-    --r: var(--r-start);
+    transform: translateX(-50%) scale(1.7);
   }
   to {
-    --r: 1;
+    transform: translateX(-50%) scale(1);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .loading-container {
+  .loading-container::before {
     animation: none;
-    --r: 1;
+    transform: translateX(-50%) scale(1);
   }
 }
 
@@ -88,10 +81,10 @@
   }
 
   @supports (animation-timeline: scroll()) {
-    .hero {
-      animation: hero-fade linear both;
-      animation-timeline: scroll(root block);
-      animation-range: 0 60dvh;
+    &.is-ready .hero {
+      animation-name: hero-fade;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
     }
   }
 
@@ -123,6 +116,13 @@
   }
 }
 
+@supports (animation-timeline: scroll()) {
+  .intro.is-ready :is(.hero) {
+    animation-timeline: scroll(root block);
+    animation-range: 0 60dvh;
+  }
+}
+
 @keyframes hero-fade {
   to {
     opacity: 0;
@@ -131,7 +131,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .intro .hero {
+  .intro .hero,
+  .intro.is-ready :is(.hero) {
     animation: none;
+    animation-timeline: auto;
   }
 }

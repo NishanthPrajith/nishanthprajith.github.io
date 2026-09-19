@@ -29,7 +29,13 @@ export default function Image({
         }}
       >
         {allImages.map((img, index) => (
-          <img src={img} key={index} alt={`${index}`} />
+          <img
+            src={img}
+            key={index}
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
         ))}
       </div>
 

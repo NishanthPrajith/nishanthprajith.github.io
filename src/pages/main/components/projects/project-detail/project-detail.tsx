@@ -16,13 +16,23 @@ export default function ProjectPage({
       {project.image && (
         <div
           className="project-image"
-          style={{
-            ...(project.image
-              ? { backgroundImage: `url(${project.image})` }
-              : {}),
-            ...(project.imageStyle ? project.imageStyle : {}),
-          }}
-        />
+          style={
+            project.imageStyle?.backgroundColor
+              ? { backgroundColor: project.imageStyle.backgroundColor }
+              : undefined
+          }
+        >
+          <img
+            src={project.image}
+            alt=""
+            decoding="async"
+            style={
+              project.imageStyle?.objectFit
+                ? { objectFit: project.imageStyle.objectFit }
+                : undefined
+            }
+          />
+        </div>
       )}
       <div className="project">
         <Helmet>
